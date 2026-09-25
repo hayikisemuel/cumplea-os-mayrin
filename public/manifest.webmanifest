@@ -1,0 +1,19 @@
+{
+  "name": "Poukitty",
+  "short_name": "Poukitty",
+  "description": "Cuida de tu mascota 3D, juega y celebra con Mayrin.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f8efe8",
+  "theme_color": "#f8efe8",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
