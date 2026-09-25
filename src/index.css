@@ -1,0 +1,13 @@
+:root {
+  font-family: Georgia, 'Times New Roman', serif;
+  color: #403238;
+  background: #f8efe8;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* { box-sizing: border-box; }
+html, body, #root { width: 100%; min-width: 320px; min-height: 100%; margin: 0; }
+body { min-height: 100svh; overflow-x: hidden; background: #f8efe8; }
+button { font: inherit; }
