@@ -8,7 +8,7 @@ import './App.css'
 type Action = 'food' | 'water' | 'play'
 
 function KittyModel({ action }: { action: Action | null }) {
-  const model = useLoader(FBXLoader, '/models/kitty.fbx')
+  const model = useLoader(FBXLoader, `${import.meta.env.BASE_URL}models/kitty.fbx`)
   const group = useRef<THREE.Group>(null)
 
   useEffect(() => {
@@ -111,8 +111,8 @@ function App() {
         <aside className="care-panel"><div className="panel-heading"><div><p className="eyebrow">CUIDADOS DE HOY</p><h2>¿Qué necesita?</h2></div><span className="mood">♡</span></div><div className="mood-line"><span>Estado de ánimo</span><strong>{mood}</strong></div><Status label="Hambre" value={hunger} tone="coral" icon="◒" /><Status label="Sed" value={thirst} tone="blue" icon="◌" /><Status label="Diversión" value={happiness} tone="gold" icon="✦" /><div className="actions"><button className="care-button food" type="button" onClick={() => feed('food')} disabled={action !== null}><span className="button-icon">🍓</span><span><strong>Dar comida</strong><small>Un bocado rico</small></span><span className="arrow">→</span></button><button className="care-button water" type="button" onClick={() => feed('water')} disabled={action !== null}><span className="button-icon">💧</span><span><strong>Dar agua</strong><small>Un sorbito fresco</small></span><span className="arrow">→</span></button><button className="care-button play" type="button" onClick={play} disabled={action !== null}><span className="button-icon">✦</span><span><strong>Jugar</strong><small>Un ratito juntos</small></span><span className="arrow">→</span></button></div></aside>
       </section>
       <footer><span>♡</span> Kitty se siente querida <span className="footer-right">Cuidar es compartir</span></footer>
-      <audio ref={music} src="/music/feliz-cumpleanos.mp3" loop preload="auto" />
-      {birthdayOpen && <div className="birthday-backdrop" role="presentation" onClick={() => setBirthdayOpen(false)}><section className="birthday-card" role="dialog" aria-modal="true" aria-labelledby="birthday-title" onClick={(event) => event.stopPropagation()}><button className="close-card" type="button" onClick={() => setBirthdayOpen(false)} aria-label="Cerrar carta">×</button><div className="card-seal">♡</div><p className="eyebrow">UNA CARTITA PARA TI</p><img className="birthday-photo" src="/images/cumpleanos-mayrin.jpeg" alt="Recuerdo de cumpleaños en el salón de clases" /><h2 id="birthday-title">¡Feliz cumpleaños<br /><em>Mayrin!</em></h2><p>Que tu día esté lleno de alegría, abrazos y momentos bonitos.</p><div className="cake">🎂</div><small>Con cariño, Rafa Era</small></section></div>}
+      <audio ref={music} src={`${import.meta.env.BASE_URL}music/feliz-cumpleanos.mp3`} loop preload="auto" />
+      {birthdayOpen && <div className="birthday-backdrop" role="presentation" onClick={() => setBirthdayOpen(false)}><section className="birthday-card" role="dialog" aria-modal="true" aria-labelledby="birthday-title" onClick={(event) => event.stopPropagation()}><button className="close-card" type="button" onClick={() => setBirthdayOpen(false)} aria-label="Cerrar carta">×</button><div className="card-seal">♡</div><p className="eyebrow">UNA CARTITA PARA TI</p><img className="birthday-photo" src={`${import.meta.env.BASE_URL}images/cumpleanos-mayrin.jpeg`} alt="Recuerdo de cumpleaños en el salón de clases" /><h2 id="birthday-title">¡Feliz cumpleaños<br /><em>Mayrin!</em></h2><p>Que tu día esté lleno de alegría, abrazos y momentos bonitos.</p><div className="cake">🎂</div><small>Con cariño, Rafa Era</small></section></div>}
     </main>
   )
 }
